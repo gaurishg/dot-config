@@ -3,3 +3,4 @@
 !.git*
 !tmux/**/*
 !nvim/**/*
+!/README.md
