@@ -3,7 +3,7 @@
 ## Steps to reproduce the configuration
 1. Install Python and Node (needed for vim)
 ```bash
-sudo apt install python3-pip python3-venv
+sudo apt install tmux python3-pip python3-venv
 ```
 
 ```bash
@@ -27,9 +27,20 @@ sudo apt install fzf ripgrep
 
 
 3. Clone the repo
+   If `.config` directory does not exists
 ```bash
 cd ~/.config
 git clone git@github.com:gaurishg/dot-config.git .
+```
+
+If `.config` exists
+```bash
+cd .config
+git init
+git remote add origin git@github.com:gaurish/dot-config.git
+git fetch
+git pull
+git reset --hard HEAD
 ```
 
 4. Initialize submodules
