@@ -1,3 +1,7 @@
+vim.g.coc_global_extensions = {
+  'coc-pyright',
+  'coc-clangd',
+}
 --
 -- Disable netrw (needed by nvim-tree plugin)
 vim.g.loaded_netrw = 1
@@ -559,225 +563,225 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        clangd = {
-          cmd = {
-            'clangd',
-            '--header-insertion=never',
-            '--offset-encoding=utf-16',
-            -- '--inlay-hints',
-          },
-          capabilities = {
-            clangdInlayHintsProvider = true,
-          },
-        },
+        -- clangd = {
+        --   cmd = {
+        --     'clangd',
+        --     '--header-insertion=never',
+        --     '--offset-encoding=utf-16',
+        --     -- '--inlay-hints',
+        --   },
+        --   capabilities = {
+        --     clangdInlayHintsProvider = true,
+        --   },
+        -- },
         -- gopls = {},
-        pyright = {},
-        rust_analyzer = {
-          capabilities = {
-            experimental = {
-              serverStatusNotification = true,
-            },
-            general = {
-              positionEncodings = { 'utf-16' },
-            },
-            textDocument = {
-              callHierarchy = {
-                dynamicRegistration = false,
-              },
-              codeAction = {
-                codeActionLiteralSupport = {
-                  codeActionKind = {
-                    valueSet = { '', 'quickfix', 'refactor', 'refactor.extract', 'refactor.inline', 'refactor.rewrite', 'source', 'source.organizeImports' },
-                  },
-                },
-                dataSupport = true,
-                dynamicRegistration = true,
-                isPreferredSupport = true,
-                resolveSupport = {
-                  properties = { 'edit' },
-                },
-              },
-              completion = {
-                completionItem = {
-                  commitCharactersSupport = false,
-                  deprecatedSupport = false,
-                  documentationFormat = { 'markdown', 'plaintext' },
-                  preselectSupport = false,
-                  snippetSupport = false,
-                },
-                completionItemKind = {
-                  valueSet = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 },
-                },
-                completionList = {
-                  itemDefaults = { 'editRange', 'insertTextFormat', 'insertTextMode', 'data' },
-                },
-                contextSupport = false,
-                dynamicRegistration = false,
-              },
-              declaration = {
-                linkSupport = true,
-              },
-              definition = {
-                dynamicRegistration = true,
-                linkSupport = true,
-              },
-              diagnostic = {
-                dynamicRegistration = false,
-              },
-              documentHighlight = {
-                dynamicRegistration = false,
-              },
-              documentSymbol = {
-                dynamicRegistration = false,
-                hierarchicalDocumentSymbolSupport = true,
-                symbolKind = {
-                  valueSet = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 },
-                },
-              },
-              formatting = {
-                dynamicRegistration = true,
-              },
-              hover = {
-                contentFormat = { 'markdown', 'plaintext' },
-                dynamicRegistration = true,
-              },
-              implementation = {
-                linkSupport = true,
-              },
-              inlayHint = {
-                dynamicRegistration = true,
-                resolveSupport = {
-                  properties = { 'textEdits', 'tooltip', 'location', 'command' },
-                },
-              },
-              publishDiagnostics = {
-                dataSupport = true,
-                relatedInformation = true,
-                tagSupport = {
-                  valueSet = { 1, 2 },
-                },
-              },
-              rangeFormatting = {
-                dynamicRegistration = true,
-              },
-              references = {
-                dynamicRegistration = false,
-              },
-              rename = {
-                dynamicRegistration = true,
-                prepareSupport = true,
-              },
-              semanticTokens = {
-                augmentsSyntaxTokens = true,
-                dynamicRegistration = false,
-                formats = { 'relative' },
-                multilineTokenSupport = false,
-                overlappingTokenSupport = true,
-                requests = {
-                  full = {
-                    delta = true,
-                  },
-                  range = false,
-                },
-                serverCancelSupport = false,
-                tokenModifiers = {
-                  'declaration',
-                  'definition',
-                  'readonly',
-                  'static',
-                  'deprecated',
-                  'abstract',
-                  'async',
-                  'modification',
-                  'documentation',
-                  'defaultLibrary',
-                },
-                tokenTypes = {
-                  'namespace',
-                  'type',
-                  'class',
-                  'enum',
-                  'interface',
-                  'struct',
-                  'typeParameter',
-                  'parameter',
-                  'variable',
-                  'property',
-                  'enumMember',
-                  'event',
-                  'function',
-                  'method',
-                  'macro',
-                  'keyword',
-                  'modifier',
-                  'comment',
-                  'string',
-                  'number',
-                  'regexp',
-                  'operator',
-                  'decorator',
-                },
-              },
-              signatureHelp = {
-                dynamicRegistration = false,
-                signatureInformation = {
-                  activeParameterSupport = true,
-                  documentationFormat = { 'markdown', 'plaintext' },
-                  parameterInformation = {
-                    labelOffsetSupport = true,
-                  },
-                },
-              },
-              synchronization = {
-                didSave = true,
-                dynamicRegistration = false,
-                willSave = true,
-                willSaveWaitUntil = true,
-              },
-              typeDefinition = {
-                linkSupport = true,
-              },
-            },
-            window = {
-              showDocument = {
-                support = true,
-              },
-              showMessage = {
-                messageActionItem = {
-                  additionalPropertiesSupport = false,
-                },
-              },
-              workDoneProgress = true,
-            },
-            workspace = {
-              applyEdit = true,
-              configuration = true,
-              didChangeConfiguration = {
-                dynamicRegistration = false,
-              },
-              didChangeWatchedFiles = {
-                dynamicRegistration = true,
-                relativePatternSupport = true,
-              },
-              inlayHint = {
-                refreshSupport = true,
-              },
-              semanticTokens = {
-                refreshSupport = true,
-              },
-              symbol = {
-                dynamicRegistration = false,
-                symbolKind = {
-                  valueSet = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 },
-                },
-              },
-              workspaceEdit = {
-                resourceOperations = { 'rename', 'create', 'delete' },
-              },
-              workspaceFolders = true,
-            },
-          },
-        },
+        -- pyright = {},
+        -- rust_analyzer = {
+        --   capabilities = {
+        --     experimental = {
+        --       serverStatusNotification = true,
+        --     },
+        --     general = {
+        --       positionEncodings = { 'utf-16' },
+        --     },
+        --     textDocument = {
+        --       callHierarchy = {
+        --         dynamicRegistration = false,
+        --       },
+        --       codeAction = {
+        --         codeActionLiteralSupport = {
+        --           codeActionKind = {
+        --             valueSet = { '', 'quickfix', 'refactor', 'refactor.extract', 'refactor.inline', 'refactor.rewrite', 'source', 'source.organizeImports' },
+        --           },
+        --         },
+        --         dataSupport = true,
+        --         dynamicRegistration = true,
+        --         isPreferredSupport = true,
+        --         resolveSupport = {
+        --           properties = { 'edit' },
+        --         },
+        --       },
+        --       completion = {
+        --         completionItem = {
+        --           commitCharactersSupport = false,
+        --           deprecatedSupport = false,
+        --           documentationFormat = { 'markdown', 'plaintext' },
+        --           preselectSupport = false,
+        --           snippetSupport = false,
+        --         },
+        --         completionItemKind = {
+        --           valueSet = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 },
+        --         },
+        --         completionList = {
+        --           itemDefaults = { 'editRange', 'insertTextFormat', 'insertTextMode', 'data' },
+        --         },
+        --         contextSupport = false,
+        --         dynamicRegistration = false,
+        --       },
+        --       declaration = {
+        --         linkSupport = true,
+        --       },
+        --       definition = {
+        --         dynamicRegistration = true,
+        --         linkSupport = true,
+        --       },
+        --       diagnostic = {
+        --         dynamicRegistration = false,
+        --       },
+        --       documentHighlight = {
+        --         dynamicRegistration = false,
+        --       },
+        --       documentSymbol = {
+        --         dynamicRegistration = false,
+        --         hierarchicalDocumentSymbolSupport = true,
+        --         symbolKind = {
+        --           valueSet = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 },
+        --         },
+        --       },
+        --       formatting = {
+        --         dynamicRegistration = true,
+        --       },
+        --       hover = {
+        --         contentFormat = { 'markdown', 'plaintext' },
+        --         dynamicRegistration = true,
+        --       },
+        --       implementation = {
+        --         linkSupport = true,
+        --       },
+        --       inlayHint = {
+        --         dynamicRegistration = true,
+        --         resolveSupport = {
+        --           properties = { 'textEdits', 'tooltip', 'location', 'command' },
+        --         },
+        --       },
+        --       publishDiagnostics = {
+        --         dataSupport = true,
+        --         relatedInformation = true,
+        --         tagSupport = {
+        --           valueSet = { 1, 2 },
+        --         },
+        --       },
+        --       rangeFormatting = {
+        --         dynamicRegistration = true,
+        --       },
+        --       references = {
+        --         dynamicRegistration = false,
+        --       },
+        --       rename = {
+        --         dynamicRegistration = true,
+        --         prepareSupport = true,
+        --       },
+        --       semanticTokens = {
+        --         augmentsSyntaxTokens = true,
+        --         dynamicRegistration = false,
+        --         formats = { 'relative' },
+        --         multilineTokenSupport = false,
+        --         overlappingTokenSupport = true,
+        --         requests = {
+        --           full = {
+        --             delta = true,
+        --           },
+        --           range = false,
+        --         },
+        --         serverCancelSupport = false,
+        --         tokenModifiers = {
+        --           'declaration',
+        --           'definition',
+        --           'readonly',
+        --           'static',
+        --           'deprecated',
+        --           'abstract',
+        --           'async',
+        --           'modification',
+        --           'documentation',
+        --           'defaultLibrary',
+        --         },
+        --         tokenTypes = {
+        --           'namespace',
+        --           'type',
+        --           'class',
+        --           'enum',
+        --           'interface',
+        --           'struct',
+        --           'typeParameter',
+        --           'parameter',
+        --           'variable',
+        --           'property',
+        --           'enumMember',
+        --           'event',
+        --           'function',
+        --           'method',
+        --           'macro',
+        --           'keyword',
+        --           'modifier',
+        --           'comment',
+        --           'string',
+        --           'number',
+        --           'regexp',
+        --           'operator',
+        --           'decorator',
+        --         },
+        --       },
+        --       signatureHelp = {
+        --         dynamicRegistration = false,
+        --         signatureInformation = {
+        --           activeParameterSupport = true,
+        --           documentationFormat = { 'markdown', 'plaintext' },
+        --           parameterInformation = {
+        --             labelOffsetSupport = true,
+        --           },
+        --         },
+        --       },
+        --       synchronization = {
+        --         didSave = true,
+        --         dynamicRegistration = false,
+        --         willSave = true,
+        --         willSaveWaitUntil = true,
+        --       },
+        --       typeDefinition = {
+        --         linkSupport = true,
+        --       },
+        --     },
+        --     window = {
+        --       showDocument = {
+        --         support = true,
+        --       },
+        --       showMessage = {
+        --         messageActionItem = {
+        --           additionalPropertiesSupport = false,
+        --         },
+        --       },
+        --       workDoneProgress = true,
+        --     },
+        --     workspace = {
+        --       applyEdit = true,
+        --       configuration = true,
+        --       didChangeConfiguration = {
+        --         dynamicRegistration = false,
+        --       },
+        --       didChangeWatchedFiles = {
+        --         dynamicRegistration = true,
+        --         relativePatternSupport = true,
+        --       },
+        --       inlayHint = {
+        --         refreshSupport = true,
+        --       },
+        --       semanticTokens = {
+        --         refreshSupport = true,
+        --       },
+        --       symbol = {
+        --         dynamicRegistration = false,
+        --         symbolKind = {
+        --           valueSet = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 },
+        --         },
+        --       },
+        --       workspaceEdit = {
+        --         resourceOperations = { 'rename', 'create', 'delete' },
+        --       },
+        --       workspaceFolders = true,
+        --     },
+        --   },
+        -- },
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -982,13 +986,20 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'folke/tokyonight.nvim',
+    -- 'folke/tokyonight.nvim',
+    -- 'martinsione/darkplus.nvim',
+    'rockyzhang24/arctic.nvim',
+    dependencies = { 'rktjmp/lush.nvim' },
+    name = 'arctic',
+    branch = 'main',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+      -- vim.cmd.colorscheme 'tokyonight-night'
+      -- vim.cmd.colorscheme 'darkplus'
+      vim.cmd 'colorscheme arctic'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
