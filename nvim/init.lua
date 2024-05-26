@@ -559,19 +559,23 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {
-        --   cmd = {
-        --     'clangd',
-        --     '--header-insertion=never',
-        --     '--offset-encoding=utf-16',
-        --     -- '--inlay-hints',
-        --   },
-        --   capabilities = {
-        --     clangdInlayHintsProvider = true,
-        --   },
-        -- },
+        basedpyright = {},
+        bashls = {},
+        clangd = {
+          cmd = {
+            'clangd',
+            '--header-insertion=never',
+            '--offset-encoding=utf-16',
+            -- '--inlay-hints',
+          },
+          capabilities = {
+            clangdInlayHintsProvider = true,
+          },
+        },
+        cmake = {},
         -- gopls = {},
         -- pyright = {},
+        markdown_oxide = {},
         rust_analyzer = {
           capabilities = {
             experimental = {
