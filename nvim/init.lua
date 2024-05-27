@@ -158,6 +158,16 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 5
 
+-- Set Folding behavior
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+-- vim.opt.foldcolumn = "0"
+vim.opt.foldtext = ''
+vim.opt.foldlevel = 1
+-- vim.opt.foldlevelstart = 1
+-- vim.opt.foldnestmax = 4
+-- https://www.jackfranklin.co.uk/blog/code-folding-in-vim-neovim/
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
