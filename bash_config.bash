@@ -56,6 +56,4 @@ alias apt='nala'
 alias buildsingray='(cd /home/gaurish/ros2_ws/; colcon build --packages-up-to singray_ros2_driver)'
 export PATH=`~/.config/add_to_list.py PATH ~/.local/bin/ /snap/bin`
 export LD_LIBRARY_PATH=`~/.config/add_to_list.py LD_LIBRARY_PATH ~/.local/opencv-4.2.0/lib`
-alias bashrc='source ~/.bashrc; echo ~/.bashrc sourced'
 export ROS_DOMAIN_ID=222
-alias buildsingray='(cd /home/gaurish/ros2_ws/; colcon build --packages-up-to singray_ros2_driver)'
