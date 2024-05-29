@@ -204,15 +204,15 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-for key, value in pairs {
-  ['{'] = '}',
-  ['['] = ']',
-  ['('] = ')',
-  ['"'] = '"',
-  ["'"] = "'",
-} do
-  vim.keymap.set('i', key, key .. value .. '<Esc>i', { desc = 'brackets completion' })
-end
+-- for key, value in pairs {
+--   ['{'] = '}',
+--   ['['] = ']',
+--   ['('] = ')',
+--   ['"'] = '"',
+--   ["'"] = "'",
+-- } do
+--   vim.keymap.set('i', key, key .. value .. '<Esc>i', { desc = 'brackets completion' })
+-- end
 
 vim.keymap.set('i', 'jk', '<Esc>la', { desc = 'Move over the next character' })
 
