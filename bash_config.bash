@@ -19,6 +19,7 @@ fi
 # ROS and singray specific
 source /opt/ros/humble/setup.bash
 CURRENT_ROS_WORKSPACE=ros2_ws
+# CURRENT_ROS_WORKSPACE=nav2_trial_ws
 # CURRENT_ROS_WORKSPACE=tutorial_ws
 # CURRENT_ROS_WORKSPACE=udemy_ws
 source ~/${CURRENT_ROS_WORKSPACE}/install/setup.bash
@@ -38,7 +39,7 @@ COLCON_DEFAULT="{
         # \"build-base\": \"/home/gaurish/tutorial_ws/build\",
         # \"install-base\": \"/home/gaurish/tutorial_ws/install\",
         # \"base-paths\": [\"/home/gaurish/tutorial_ws/src\"],
-        \"cmake-args\": [\"-DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=ON\"]
+        \"cmake-args\": [\"-DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=ON\", \"-DCMAKE_BUILD_TYPE=Debug\"]
     },
     # \"test\": {
     #     \"build-base\": \"/home/gaurish/ros2_ws/build\",
@@ -57,3 +58,4 @@ alias buildsingray='(cd /home/gaurish/ros2_ws/; colcon build --packages-up-to si
 export PATH=`~/.config/add_to_list.py PATH ~/.local/bin/ /snap/bin`
 export LD_LIBRARY_PATH=`~/.config/add_to_list.py LD_LIBRARY_PATH ~/.local/opencv-4.2.0/lib`
 export ROS_DOMAIN_ID=222
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp

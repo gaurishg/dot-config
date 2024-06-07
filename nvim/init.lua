@@ -163,7 +163,7 @@ vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 -- vim.opt.foldcolumn = "0"
 vim.opt.foldtext = ''
-vim.opt.foldlevel = 1
+vim.opt.foldlevel = 5
 -- vim.opt.foldlevelstart = 1
 -- vim.opt.foldnestmax = 4
 -- https://www.jackfranklin.co.uk/blog/code-folding-in-vim-neovim/
@@ -1097,7 +1097,7 @@ require('lazy').setup({
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
