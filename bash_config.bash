@@ -18,7 +18,10 @@ fi
 
 # ROS and singray specific
 source /opt/ros/humble/setup.bash
+# source /opt/ros/iron/setup.bash
 CURRENT_ROS_WORKSPACE=ros2_ws
+# CURRENT_ROS_WORKSPACE=iron_ws
+# CURRENT_ROS_WORKSPACE=udemy_moveit_alexa_ws
 # CURRENT_ROS_WORKSPACE=nav2_trial_ws
 # CURRENT_ROS_WORKSPACE=tutorial_ws
 # CURRENT_ROS_WORKSPACE=udemy_ws
@@ -56,6 +59,6 @@ alias bashrc='source ~/.bashrc; echo ~/.bashrc sourced;'
 alias apt='nala'
 alias buildsingray='(cd /home/gaurish/ros2_ws/; colcon build --packages-up-to singray_ros2_driver)'
 export PATH=`~/.config/add_to_list.py PATH ~/.local/bin/ /snap/bin`
-export LD_LIBRARY_PATH=`~/.config/add_to_list.py LD_LIBRARY_PATH ~/.local/opencv-4.2.0/lib`
+export LD_LIBRARY_PATH=`~/.config/add_to_list.py LD_LIBRARY_PATH /opt/opencv/opencv-4.2.0/lib`
 export ROS_DOMAIN_ID=222
-export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+# export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
